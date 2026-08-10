@@ -20,13 +20,19 @@
 <meta property="og:description" content="Third-party power sale in Tamil Nadu and group captive wind power across Tamil Nadu & Gujarat. Clean, reliable power for industrial and commercial buyers.">
 <meta property="og:site_name" content="Thiru Synergy Private Limited">
 <meta property="og:locale" content="en_IN">
+<!-- Social share image: upload a 1200x630 PNG/JPG to this exact path, or change the URL to match where you host it. Until the file exists, previews stay text-only. -->
+<meta property="og:image" content="https://thirusynergy.com/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Thiru Synergy — third-party & group captive wind power in Tamil Nadu & Gujarat">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Thiru Synergy | Third-Party & Group Captive Wind Power">
 <meta name="twitter:description" content="Third-party power sale in Tamil Nadu and group captive wind power across Tamil Nadu & Gujarat.">
+<meta name="twitter:image" content="https://thirusynergy.com/social-card.png">
 
-<!-- Favicon: green dot matching the logo mark -->
+<!-- Favicon: real TS logo mark on green rounded tile -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%2314805A%22/%3E%3Csvg%20x%3D%225%22%20y%3D%228.6%22%20width%3D%2222%22%20height%3D%2214.76%22%20viewBox%3D%220%200%20395%20265%22%3E%3Cg%20transform%3D%22translate%280.000000%2C265.000000%29%20scale%280.100000%2C-0.100000%29%22%0Afill%3D%22%23ffffff%22%20stroke%3D%22none%22%3E%3Cpath%20d%3D%22M1100%202540%20c-542%20-3%20-991%20-9%20-997%20-13%20-20%20-13%20-18%20-626%201%20-653%2014%0A-18%2032%20-19%20329%20-24%20246%20-4%20318%20-8%20330%20-19%2016%20-12%2017%20-84%2017%20-842%200%20-816%200%0A-829%2020%20-849%2019%20-19%2033%20-20%20334%20-20%20279%200%20315%202%20327%2017%2012%2013%2015%20163%2019%20849%204%0A663%208%20836%2018%20846%208%208%2052%2015%20125%2018%20l111%205%2017%2085%20c42%20209%20156%20401%20318%20537%2038%0A32%2070%2061%2070%2065%201%204%20-11%207%20-26%205%20-16%20-1%20-471%20-4%20-1013%20-7z%22/%3E%3Cpath%20d%3D%22M2505%202524%20c-93%20-20%20-256%20-100%20-329%20-163%20-330%20-281%20-379%20-773%20-110%0A-1102%20126%20-154%20291%20-244%20494%20-269%2046%20-5%20193%20-10%20326%20-10%20l242%200%2031%20-26%20c40%0A-34%2042%20-80%205%20-115%20l-26%20-24%20-687%20-5%20c-563%20-4%20-691%20-7%20-704%20-19%20-15%20-12%20-17%0A-48%20-17%20-326%200%20-293%201%20-313%2019%20-329%2017%20-16%2073%20-17%20757%20-14%20l739%203%2070%2024%20c165%0A55%20260%20115%20374%20237%20284%20304%20268%20797%20-35%201085%20-98%2093%20-216%20155%20-357%20189%20-72%2017%0A-118%2020%20-365%2020%20l-284%200%20-29%2029%20c-17%2018%20-29%2040%20-29%2056%200%2016%2012%2038%2029%2056%20l29%0A29%20569%200%20c476%200%20572%202%20589%2014%2018%2014%2019%2029%2019%20329%200%20251%20-3%20317%20-14%20330%20-12%2016%0A-68%2017%20-625%2016%20-496%200%20-624%20-3%20-681%20-15z%22/%3E%3C/g%3E%3C/svg%3E%3C/svg%3E">
 
 <!-- Organization structured data (Schema.org) - helps Google, AI models, and search engines -->
@@ -674,104 +680,6 @@
   /* ---------- contact cards ---------- */
   .team-section{ border-top:1px solid var(--line); }
 
-  /* ---------- blog ---------- */
-  .blog-section{ background: var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-  .blog-head-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    gap:24px;
-    margin-bottom:44px;
-    flex-wrap:wrap;
-  }
-  .blog-view-all{
-    font-family: var(--mono);
-    font-size:0.78rem;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color: var(--green);
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    transition: gap .25s ease, color .2s ease;
-  }
-  .blog-view-all:hover{ gap:14px; color: var(--green-deep); }
-  .blog-grid{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap:24px;
-  }
-  .blog-card{
-    background: var(--surface);
-    border:1px solid var(--line);
-    border-radius:2px;
-    padding:28px 26px 30px;
-    display:flex;
-    flex-direction:column;
-    box-shadow: 0 1px 3px rgba(21,35,29,0.04);
-    transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease;
-  }
-  .blog-card:hover{
-    border-color: var(--green);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 26px -12px rgba(20,128,90,0.22);
-  }
-  .blog-meta{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    font-family: var(--mono);
-    font-size:0.7rem;
-    letter-spacing:0.09em;
-    text-transform:uppercase;
-    color: var(--ink-faint);
-    margin-bottom:18px;
-  }
-  .blog-cat{
-    color: var(--green);
-    padding: 3px 8px;
-    border:1px solid var(--green);
-    border-radius: 2px;
-    font-size:0.66rem;
-  }
-  .blog-title{
-    font-family: var(--serif);
-    font-size:1.25rem;
-    line-height:1.3;
-    font-weight:500;
-    margin-bottom:12px;
-    color: var(--ink);
-  }
-  .blog-title a{ color:inherit; }
-  .blog-title a:hover{ color: var(--green); }
-  .blog-summary{
-    font-size:0.92rem;
-    line-height:1.55;
-    color: var(--ink-dim);
-    margin-bottom:22px;
-    flex-grow:1;
-  }
-  .blog-foot{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding-top:14px;
-    border-top:1px solid var(--line);
-    font-family: var(--mono);
-    font-size:0.72rem;
-    color: var(--ink-faint);
-  }
-  .blog-read{
-    color: var(--green);
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    transition: gap .2s ease;
-  }
-  .blog-read:hover{ gap:10px; }
-  @media (max-width: 920px){
-    .blog-grid{ grid-template-columns:1fr; }
-  }
   .team-grid{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
@@ -946,7 +854,6 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
       <a href="#reliability">Our approach</a>
       <a href="#projects">Capabilities</a>
       <a href="#sustainability">Sustainability</a>
-      <a href="#blog">Insights</a>
       <a href="#contact">Contact</a>
     </div>
     <a href="#contact" class="nav-cta">Talk to us</a>
@@ -961,7 +868,6 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
   <a href="#reliability">Our approach</a>
   <a href="#projects">Capabilities</a>
   <a href="#sustainability">Sustainability</a>
-  <a href="#blog">Insights</a>
   <a href="#contact">Contact</a>
   <a href="#contact" class="mobile-menu-cta">Talk to us</a>
 </div>
@@ -1140,64 +1046,6 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
   </div>
 </section>
 
-<section class="blog-section" id="blog">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <span class="section-tag">Insights</span>
-        <h2 class="section-title">Notes from the grid.</h2>
-      </div>
-      <p class="section-desc">Weekly perspectives on renewable energy, wind generation, and India's clean-energy transition.</p>
-    </div>
-    <div class="blog-head-row reveal">
-      <div></div>
-      <a href="#blog" class="blog-view-all">View all posts <span aria-hidden="true">→</span></a>
-    </div>
-    <div class="blog-grid reveal">
-
-      <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="blog-meta">
-          <span class="blog-cat" itemprop="articleSection">Wind</span>
-          <time datetime="2026-07-24" itemprop="datePublished">Jul 24, 2026</time>
-        </div>
-        <h3 class="blog-title"><a href="#blog" itemprop="headline">Understanding CGP compliance for group captive power supply in Tamil Nadu</a></h3>
-        <p class="blog-summary" itemprop="description">A plain-language guide to the Captive Generating Plant rules under the Electricity Act — who qualifies, what the 26% ownership and 51% consumption thresholds mean in practice, and where new group captive arrangements typically get tripped up.</p>
-        <div class="blog-foot">
-          <span itemprop="author">Thiru Synergy</span>
-          <a href="#blog" class="blog-read">Read <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
-
-      <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="blog-meta">
-          <span class="blog-cat" itemprop="articleSection">Regulation</span>
-          <time datetime="2026-07-17" itemprop="datePublished">Jul 17, 2026</time>
-        </div>
-        <h3 class="blog-title"><a href="#blog" itemprop="headline">How TNERC's block-wise settlement works — and why it matters to buyers</a></h3>
-        <p class="blog-summary" itemprop="description">Block-wise energy settlement is one of the least-understood parts of open-access power procurement. We break down how the 15-minute blocks are calculated, what DSM charges look like when supply and demand drift apart, and how well-designed generation reduces settlement risk.</p>
-        <div class="blog-foot">
-          <span itemprop="author">Thiru Synergy</span>
-          <a href="#blog" class="blog-read">Read <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
-
-      <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="blog-meta">
-          <span class="blog-cat" itemprop="articleSection">Sustainability</span>
-          <time datetime="2026-07-10" itemprop="datePublished">Jul 10, 2026</time>
-        </div>
-        <h3 class="blog-title"><a href="#blog" itemprop="headline">RE100, I-RECs, and the real cost of a corporate renewable commitment</a></h3>
-        <p class="blog-summary" itemprop="description">Signing an RE100 pledge is one thing; sourcing verified renewable energy against it is another. This piece walks through the certificate mechanisms (I-RECs, VCUs, CP2), what "additionality" actually means, and how to think about cost versus impact.</p>
-        <div class="blog-foot">
-          <span itemprop="author">Thiru Synergy</span>
-          <a href="#blog" class="blog-read">Read <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
 <section class="team-section" id="contact">
   <div class="wrap">
     <div class="section-head reveal">
@@ -1250,7 +1098,6 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
           <a href="#edge">Our edge</a>
           <a href="#reliability">Our approach</a>
           <a href="#projects">Capabilities</a>
-          <a href="#blog">Insights</a>
         </div>
         <div class="footer-col">
           <h3>Work with us</h3>
