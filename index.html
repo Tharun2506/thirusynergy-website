@@ -420,7 +420,11 @@
     border-radius:2px;
     margin-top:64px;
     box-shadow: 0 1px 3px rgba(21,35,29,0.04);
+    opacity:0;
+    transform: translateY(16px);
+    transition: opacity .45s ease, transform .45s ease;
   }
+  .enquiry-card.open{ opacity:1; transform:none; }
   .enquiry-head{ max-width:56ch; margin-bottom:34px; }
   .enquiry-head h3{
     font-family: var(--serif);
@@ -1208,10 +1212,10 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
       <a href="mailto:thiru@thirusynergy.com" class="btn-ghost" data-analytics="mailto_cta_click">Discuss a partnership</a>
     </div>
 
-    <div class="enquiry-card reveal" id="enquiry-form">
+    <div class="enquiry-card" id="enquiry-form" hidden>
       <div class="enquiry-head">
         <h3>Request a supply quote</h3>
-        <p>Tell us a bit about your site and load, and a director will get back to you directly — no call centre, no account manager, just the people who run the company.</p>
+        <p>Share a few details about your site and power requirement, and we'll get back to you with next steps.</p>
       </div>
       <form id="quote-form" action="https://formspree.io/f/xnpqvpbn" method="POST">
         <div class="form-grid">
@@ -1232,8 +1236,8 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
             <input type="tel" id="qf-phone" name="phone" required autocomplete="tel">
           </div>
           <div class="form-field">
-            <label for="qf-load">Approximate load / capacity needed</label>
-            <input type="text" id="qf-load" name="load" placeholder="e.g. 500 kW, 2 MW">
+            <label for="qf-load">Units consumed (per month or year)</label>
+            <input type="text" id="qf-load" name="units_consumed" placeholder="e.g. 45,000 units/month or 5,00,000 units/year">
           </div>
           <div class="form-field">
             <label for="qf-location">Site location</label>
@@ -1383,6 +1387,33 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && hamburger.getAttribute('aria-expanded') === 'true') setMenu(false);
   });
+
+  // The enquiry form stays collapsed (hidden) until someone actually clicks
+  // "Request a supply quote" — clicking reveals it and scrolls it into view,
+  // instead of it just sitting open on the page by default.
+  const enquiryCard = document.getElementById('enquiry-form');
+  function openEnquiryForm(){
+    if (!enquiryCard) return;
+    if (enquiryCard.hidden) {
+      enquiryCard.hidden = false;
+      // force a reflow so the opacity/transform transition actually plays
+      // rather than jumping straight to the open state
+      void enquiryCard.offsetHeight;
+      requestAnimationFrame(() => enquiryCard.classList.add('open'));
+    }
+    enquiryCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  document.querySelectorAll('a[href="#enquiry-form"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      openEnquiryForm();
+    });
+  });
+  // Deep link support: if someone lands on #enquiry-form directly (a shared
+  // link, or a no-JS fallback), open it on load too.
+  if (window.location.hash === '#enquiry-form') {
+    openEnquiryForm();
+  }
 
   // Enquiry form: submit via fetch to Formspree so we can show an inline
   // success/error state instead of a full page redirect. Falls back to a
