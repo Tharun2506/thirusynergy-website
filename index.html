@@ -12,14 +12,12 @@
 <!-- Google Search Console verification -->
 <meta name="google-site-verification" content="V6bJsLSdkOYHWcVJ9tPCqiTRQQr215l7DkBbaig0J50" />
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZWTDM10S1"></script>
+<!-- Google tag (gtag.js) -- disabled in this color-comparison preview copy only,
+     so opening/clicking around it doesn't add noise to the real live GA4 property.
+     The live site's analytics wiring is untouched. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4ZWTDM10S1');
 </script>
 
 
@@ -109,20 +107,26 @@
 
 <style>
   :root{
-    --bg: #F5F8F5;
-    --bg-2: #EAF1EC;
+    --bg: #F6F4EF;
+    --bg-2: #EDEAE1;
     --surface: #FFFFFF;
-    --line: #DCE6DF;
-    --ink: #15231D;
-    --ink-dim: #566A60;
-    --ink-faint: #5F6D65;
-    --green: #14805A;
-    --green-deep: #0C5C40;
-    --green-text: #0A5238;
-    --amber: #A85712;
-    --amber-dim: #8B4A0F;
-    --steel: #325F79;
-    --steel-dim: #244659;
+    --line: #DAD6CC;
+    --ink: #1B1F1D;
+    --ink-dim: #5A5D56;
+    --ink-faint: #6E726A;
+    --green: #B5651D;
+    --green-deep: #8F4A15;
+    --green-text: #3F6B4F;
+    --amber: #A9773C;
+    --amber-dim: #7A5A2E;
+    --steel: #6E7268;
+    --steel-dim: #52564D;
+    --status-success: #3F6B4F;
+    --status-success-bg: rgba(63,107,79,0.08);
+    --status-success-border: rgba(63,107,79,0.25);
+    --status-error: #A63B26;
+    --status-error-bg: rgba(166,59,38,0.08);
+    --status-error-border: rgba(166,59,38,0.25);
     --serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
     --grot: 'Space Grotesk', 'Inter', sans-serif;
     --mono: 'IBM Plex Mono', 'SFMono-Regular', monospace;
@@ -150,7 +154,7 @@
   ::selection{ background: var(--green); color:#fff; }
 
   :focus-visible{
-    outline: 2px solid var(--amber);
+    outline: 2px solid var(--green);
     outline-offset: 3px;
   }
 
@@ -179,7 +183,7 @@
     top:0;
     z-index:50;
     backdrop-filter: blur(14px);
-    background: rgba(245,248,245,0.82);
+    background: rgba(246,244,239,0.82);
     border-bottom: 1px solid var(--line);
   }
   nav{
@@ -203,7 +207,7 @@
     width:26px; height:26px;
     border-radius:6px;
     background: var(--green);
-    box-shadow: 0 0 12px 1px rgba(20,128,90,0.28);
+    box-shadow: 0 0 12px 1px rgba(181,101,29,0.28);
     flex-shrink:0;
     display:inline-flex;
     align-items:center;
@@ -272,7 +276,7 @@
     position:fixed;
     inset:0;
     z-index:40;
-    background: rgba(245,248,245,0.98);
+    background: rgba(246,244,239,0.98);
     backdrop-filter: blur(12px);
     padding: 96px 32px 40px;
     display:flex;
@@ -376,7 +380,7 @@
     transition: transform .2s ease, box-shadow .2s ease;
     display:inline-block;
   }
-  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 8px 22px -8px rgba(20,128,90,0.55); background: var(--green-deep); }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 8px 22px -8px rgba(181,101,29,0.55); background: var(--green-deep); }
   .btn-ghost{
     padding:14px 22px;
     font-size:0.88rem;
@@ -487,7 +491,7 @@
     border-radius:2px;
     transition: transform .2s ease, box-shadow .2s ease, background .2s ease, opacity .2s ease;
   }
-  .form-actions button:hover{ transform:translateY(-2px); box-shadow:0 8px 22px -8px rgba(20,128,90,0.55); background: var(--green-deep); }
+  .form-actions button:hover{ transform:translateY(-2px); box-shadow:0 8px 22px -8px rgba(181,101,29,0.55); background: var(--green-deep); }
   .form-actions button:disabled{ opacity:0.6; cursor:default; transform:none; box-shadow:none; }
   .form-note{ font-size:0.78rem; color: var(--ink-faint); }
   .form-status{
@@ -497,8 +501,8 @@
     border-radius:2px;
     display:none;
   }
-  .form-status.success{ display:block; background: rgba(20,128,90,0.08); color: var(--green-text); border:1px solid rgba(20,128,90,0.25); }
-  .form-status.error{ display:block; background: rgba(168,87,18,0.08); color: var(--amber-dim); border:1px solid rgba(168,87,18,0.25); }
+  .form-status.success{ display:block; background: var(--status-success-bg); color: var(--status-success); border:1px solid var(--status-success-border); }
+  .form-status.error{ display:block; background: var(--status-error-bg); color: var(--status-error); border:1px solid var(--status-error-border); }
   @media (max-width: 720px){
     .enquiry-card{ padding:32px 24px; }
     .form-grid{ grid-template-columns:1fr; }
@@ -530,7 +534,7 @@
     stroke-dasharray: 2200;
     stroke-dashoffset: 2200;
     animation: draw 2.6s cubic-bezier(.65,0,.35,1) forwards 0.3s;
-    filter: drop-shadow(0 0 5px rgba(224,138,43,0.35));
+    filter: drop-shadow(0 0 5px rgba(181,101,29,0.35));
   }
   @keyframes draw{ to{ stroke-dashoffset:0; } }
 
@@ -788,7 +792,7 @@
   }
   .source-dot.live{
     background: var(--green);
-    box-shadow:0 0 8px 1px rgba(20,128,90,0.5);
+    box-shadow:0 0 8px 1px rgba(181,101,29,0.5);
   }
   .source-status{
     margin-left:auto;
@@ -835,7 +839,7 @@
   .team-card:hover{
     border-color: var(--green);
     transform: translateY(-3px);
-    box-shadow: 0 10px 26px -12px rgba(20,128,90,0.25);
+    box-shadow: 0 10px 26px -12px rgba(181,101,29,0.25);
   }
   .team-name{
     font-family: var(--serif);
@@ -898,7 +902,7 @@
     justify-content:center;
     margin-top:2px;
     color: var(--green);
-    background: rgba(20,128,90,0.06);
+    background: rgba(181,101,29,0.06);
   }
   .edge-check svg{ width:12px; height:12px; }
   .edge-text{ font-size:0.98rem; line-height:1.55; color: var(--ink); }
@@ -979,7 +983,7 @@
 
 <header>
   <nav>
-    <div class="logo"><span class="mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26"><rect width="32" height="32" rx="7" fill="#14805A"/><svg x="5" y="8.6" width="22" height="14.76" viewBox="0 0 395 265"><g transform="translate(0.000000,265.000000) scale(0.100000,-0.100000)"
+    <div class="logo"><span class="mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26"><rect width="32" height="32" rx="7" fill="#1B1F1D"/><svg x="5" y="8.6" width="22" height="14.76" viewBox="0 0 395 265"><g transform="translate(0.000000,265.000000) scale(0.100000,-0.100000)"
 fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -13 -18 -626 1 -653 14
 -18 32 -19 329 -24 246 -4 318 -8 330 -19 16 -12 17 -84 17 -842 0 -816 0
 -829 20 -849 19 -19 33 -20 334 -20 279 0 315 2 327 17 12 13 15 163 19 849 4
@@ -1109,7 +1113,7 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
     </div>
     <div class="grid-diagram reveal" aria-hidden="true">
       <svg viewBox="0 0 400 320">
-        <g stroke="#BBD0C2" stroke-width="1.2">
+        <g stroke="#D8D3C6" stroke-width="1.2">
           <line x1="60" y1="60" x2="200" y2="40"/>
           <line x1="200" y1="40" x2="340" y2="70"/>
           <line x1="60" y1="60" x2="80" y2="200"/>
@@ -1121,7 +1125,7 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
           <line x1="200" y1="160" x2="200" y2="270"/>
           <line x1="320" y1="210" x2="260" y2="270"/>
         </g>
-        <g fill="#3E7C9A">
+        <g fill="#8B8F82">
           <circle cx="60" cy="60" r="3.5"/>
           <circle cx="340" cy="70" r="3.5"/>
           <circle cx="80" cy="200" r="3.5"/>
@@ -1129,9 +1133,9 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
           <circle cx="140" cy="270" r="3.5"/>
           <circle cx="260" cy="270" r="3.5"/>
         </g>
-        <circle class="node-pulse" cx="200" cy="40" r="4" fill="#14805A"/>
-        <circle class="node-pulse" cx="200" cy="160" r="4" fill="#14805A" style="animation-delay:0.6s"/>
-        <circle class="node-pulse" cx="200" cy="270" r="4" fill="#14805A" style="animation-delay:1.2s"/>
+        <circle class="node-pulse" cx="200" cy="40" r="4" fill="#B5651D"/>
+        <circle class="node-pulse" cx="200" cy="160" r="4" fill="#B5651D" style="animation-delay:0.6s"/>
+        <circle class="node-pulse" cx="200" cy="270" r="4" fill="#B5651D" style="animation-delay:1.2s"/>
       </svg>
     </div>
   </div>
@@ -1293,7 +1297,7 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
 <footer>
   <div class="wrap">
     <div class="footer-top">
-      <div class="logo"><span class="mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26"><rect width="32" height="32" rx="7" fill="#14805A"/><svg x="5" y="8.6" width="22" height="14.76" viewBox="0 0 395 265"><g transform="translate(0.000000,265.000000) scale(0.100000,-0.100000)"
+      <div class="logo"><span class="mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26"><rect width="32" height="32" rx="7" fill="#1B1F1D"/><svg x="5" y="8.6" width="22" height="14.76" viewBox="0 0 395 265"><g transform="translate(0.000000,265.000000) scale(0.100000,-0.100000)"
 fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -13 -18 -626 1 -653 14
 -18 32 -19 329 -24 246 -4 318 -8 330 -19 16 -12 17 -84 17 -842 0 -816 0
 -829 20 -849 19 -19 33 -20 334 -20 279 0 315 2 327 17 12 13 15 163 19 849 4
