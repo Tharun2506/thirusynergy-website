@@ -542,7 +542,14 @@
   }
   .stat-strip .wrap{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(4,1fr);
+  }
+  .stat-footnote{
+    padding:14px 0 22px;
+    font-size:0.74rem;
+    line-height:1.6;
+    color:var(--ink-faint);
+    text-align:center;
   }
   .stat{
     padding:30px 0;
@@ -1043,6 +1050,13 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
       <div class="stat-num" data-target="100" data-suffix="%">100<span class="unit">%</span></div>
       <div class="stat-label">Commitment to reliable supply</div>
     </div>
+    <div class="stat">
+      <div class="stat-num" data-static="true">10–20<span class="unit">%</span></div>
+      <div class="stat-label">Save vs TANGEDCO tariffs*</div>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="stat-footnote">*Indicative savings vs. TANGEDCO tariffs — actual figures may be higher depending on consumer category, load profile, and supply model (third-party open access or Group Captive).</p>
   </div>
 </div>
 
@@ -1216,6 +1230,7 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
       <div class="enquiry-head">
         <h3>Request a supply quote</h3>
         <p>Share a few details about your site and power requirement, and we'll get back to you with next steps.</p>
+        <p style="font-size:0.78rem; color:var(--ink-faint); margin-top:10px; line-height:1.6;">*Indicative savings vs. TANGEDCO tariffs — actual figures may be higher depending on consumer category, load profile, and supply model (third-party open access or Group Captive).</p>
       </div>
       <form id="quote-form" action="https://formspree.io/f/xnpqvpbn" method="POST">
         <div class="form-grid">
