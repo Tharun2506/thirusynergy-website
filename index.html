@@ -719,6 +719,57 @@
     justify-self:end;
   }
 
+  /* ---------- operations gallery ---------- */
+  .op-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 220px;
+    gap:20px;
+  }
+  .op-card{
+    border:1px solid var(--line);
+    background: var(--surface);
+    border-radius:2px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    box-shadow: 0 1px 3px rgba(21,35,29,0.04);
+    transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+  }
+  .op-card:hover{
+    border-color: var(--green);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px -12px rgba(181,101,29,0.25);
+  }
+  .op-card img{
+    width:100%;
+    flex:1 1 auto;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .op-card figcaption{
+    padding:12px 16px;
+    font-family: var(--mono);
+    font-size:0.74rem;
+    letter-spacing:0.02em;
+    color: var(--ink-dim);
+    border-top:1px solid var(--line);
+    flex-shrink:0;
+  }
+  .op-card--feature{
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  @media (max-width: 920px){
+    .op-grid{ grid-template-columns: 1fr 1fr; grid-auto-rows:180px; }
+    .op-card--feature{ grid-column: span 2; grid-row: span 1; height:260px; }
+  }
+  @media (max-width: 600px){
+    .op-grid{ grid-template-columns: 1fr; }
+    .op-card--feature{ grid-column: span 1; }
+  }
+
   /* ---------- sustainability ---------- */
   .mix-bar{
     display:flex;
@@ -1002,6 +1053,7 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
       <a href="#edge">Our edge</a>
       <a href="#reliability">Our approach</a>
       <a href="#projects">Capabilities</a>
+      <a href="#operations">Our operations</a>
       <a href="#sustainability">Sustainability</a>
       <a href="#contact">Contact</a>
     </div>
@@ -1016,6 +1068,7 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
   <a href="#edge">Our edge</a>
   <a href="#reliability">Our approach</a>
   <a href="#projects">Capabilities</a>
+  <a href="#operations">Our operations</a>
   <a href="#sustainability">Sustainability</a>
   <a href="#contact">Contact</a>
   <a href="#contact" class="mobile-menu-cta" data-analytics="nav_talk_to_us_click">Talk to us</a>
@@ -1180,6 +1233,60 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
   </div>
 </section>
 
+<section id="operations">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="section-tag">Our operations</span>
+        <h2 class="section-title">Wind energy, generating across Tamil Nadu.</h2>
+      </div>
+      <p class="section-desc">A look at the wind generation infrastructure behind our third-party and group captive supply.</p>
+    </div>
+    <div class="op-grid reveal">
+      <figure class="op-card op-card--feature">
+        <img src="images/operations/aerial-landscape.jpg" alt="Aerial view of wind turbines across an arid, palm-dotted Tamil Nadu landscape" loading="lazy">
+        <figcaption>Aerial view — wind generation corridor, Tamil Nadu</figcaption>
+      </figure>
+      <figure class="op-card">
+        <img src="images/operations/multi-turbine-landscape.jpg" alt="Multiple wind turbines across open terrain" loading="lazy">
+        <figcaption>Turbines in operation</figcaption>
+      </figure>
+      <figure class="op-card">
+        <img src="images/operations/turbine-close-up.jpg" alt="Close-up of a wind turbine hub and blades against a clear sky" loading="lazy">
+        <figcaption>Turbine hub and blade assembly</figcaption>
+      </figure>
+      <figure class="op-card">
+        <img src="images/operations/substation.jpg" alt="Electrical substation infrastructure used for grid interconnection" loading="lazy">
+        <figcaption>Grid interconnection infrastructure</figcaption>
+      </figure>
+      <figure class="op-card">
+        <img src="images/operations/turbine-tower.jpg" alt="View up a wind turbine tower toward the hub" loading="lazy">
+        <figcaption>Turbine tower structure</figcaption>
+      </figure>
+      <figure class="op-card">
+        <img src="images/operations/hub-mechanics.jpg" alt="Interior view of a wind turbine nacelle showing the main shaft and gearbox" loading="lazy">
+        <figcaption>Inside the nacelle — drivetrain &amp; gearbox</figcaption>
+      </figure>
+      <figure class="op-card">
+        <img src="images/operations/misty-mountains.jpg" alt="Misty green hills in a wind-rich Tamil Nadu terrain" loading="lazy">
+        <figcaption>Wind-rich terrain, Tamil Nadu hill corridors</figcaption>
+      </figure>
+      <figure class="op-card">
+        <img src="images/operations/golden-hour-hilltop.jpg" alt="Wind turbines on a hilltop at golden hour" loading="lazy">
+        <figcaption>Generation continues from sunrise to sunset</figcaption>
+      </figure>
+      <figure class="op-card">
+        <img src="images/operations/dusk-silhouette.jpg" alt="Wind turbines silhouetted at dusk" loading="lazy">
+        <figcaption>Clean energy, around the clock</figcaption>
+      </figure>
+      <figure class="op-card">
+        <img src="images/operations/hills-lake-sunset.jpg" alt="Wind turbine against green hills and a lake at sunset" loading="lazy">
+        <figcaption>Renewable power, sustainably sourced</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <section id="sustainability">
   <div class="wrap sustain-grid">
     <div class="reveal">
@@ -1318,6 +1425,7 @@ fill="#ffffff" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
           <a href="#edge">Our edge</a>
           <a href="#reliability">Our approach</a>
           <a href="#projects">Capabilities</a>
+          <a href="#operations">Our operations</a>
         </div>
         <div class="footer-col">
           <h3>Work with us</h3>
