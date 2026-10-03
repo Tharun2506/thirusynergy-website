@@ -396,9 +396,8 @@
   .contact-section{ background: var(--bg-2); }
   .enquiry-card{
     border:1px solid var(--line); background: var(--surface); padding:48px 44px; border-radius:24px;
-    margin-top:56px; opacity:0; transform: translateY(16px); transition: opacity .45s ease, transform .45s ease;
+    margin-top:56px;
   }
-  .enquiry-card.open{ opacity:1; transform:none; }
   .enquiry-head{ max-width:60ch; margin-bottom:34px; }
   .enquiry-head h3{ font-size:1.7rem; font-weight:900; margin-bottom:10px; text-transform:uppercase; }
   .enquiry-head p{ color: var(--ink-dim); font-size:0.96rem; line-height:1.6; }
@@ -726,7 +725,7 @@ fill="#D1EF63" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
     <span class="section-num">06 / Let's start a conversation</span>
     <h2 class="section-title">LET'S MAKE<br>THE SHIFT.</h2>
     <p class="section-desc" style="margin-top:24px;">Share your location and electricity needs. Our team will help you explore the options.</p>
-    <div class="enquiry-card" id="enquiry-form" hidden>
+    <div class="enquiry-card" id="enquiry-form">
       <div class="enquiry-head">
         <span class="tag">Your next chapter</span>
         <h3 style="margin-top:12px;">Let's talk about your power.</h3>
@@ -907,16 +906,11 @@ fill="#D1EF63" stroke="none"><path d="M1100 2540 c-542 -3 -991 -9 -997 -13 -20 -
     if (e.key === 'Escape' && hamburger.getAttribute('aria-expanded') === 'true') setMenu(false);
   });
 
-  // enquiry form open/collapse
+  // enquiry form: always visible in section 06; "Explore" links just preset + scroll to it
   const enquiryCard = document.getElementById('enquiry-form');
   const interestSelect = document.getElementById('qf-interest');
   function openEnquiryForm(presetInterest){
     if (!enquiryCard) return;
-    if (enquiryCard.hidden) {
-      enquiryCard.hidden = false;
-      void enquiryCard.offsetHeight;
-      requestAnimationFrame(() => enquiryCard.classList.add('open'));
-    }
     if (presetInterest && interestSelect) {
       interestSelect.value = presetInterest;
     }
